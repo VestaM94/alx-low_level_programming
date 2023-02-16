@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-//function starts
+/*
+ * function starts
+ */
 
 int main(void)
 {
