@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 /**
+ * main - hello printf
+ *
  * main function  prints "with proper grammar, but the outcome is a piece of
  * art,"
  *

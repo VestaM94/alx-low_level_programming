@@ -3,7 +3,7 @@
 /**
  * main - print the size of various types
  *
- * main function prints the size of various types on the computer it is compiled
+ * prints the size of various types on the computer it is compiled
  * and run on
  *
  * Return: Always 0 (Success)
