@@ -1,46 +1,42 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * str_concat - concatenates two string
+ * str_concat - concat two string to a newly allocated space in memory
  * @s1: string 1
  * @s2: string 2
- * Return: pointer to new string, NULL if it fails
+ * Return: returns a pointer to the two strings concatenated, or NULL if fails
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	int length1, length2, length3, i;
-	char *arr;
+	char *ptr;
+	unsigned int x, len1 = 0, len2 = 0;
 
-	if (s1 == NULL)
+	if (!s1)
 		s1 = "";
-	if (s2 == NULL)
+	else
+		for (; s1[len1]; len1++)
+			;
+	if (!s2)
 		s2 = "";
+	else
+		for (; s2[len2]; len2++)
+			;
+	len2++;
+	ptr = malloc((len1 + len2) * sizeof(char));
 
-	length1 = 0;
-	while (*(s1 + length1) != '\0')
-	{
-		length1++;
-	}
-
-	length2 = 0;
-	while (*(s2 + length2) != '\0')
-	{
-		length2++;
-	}
-
-	length3 = length1 + length2;
-
-	arr = (char*) malloc(length3 * sizeof(char) + 1);
-
-	if (arr == NULL)
+	if (!ptr)
 		return (NULL);
 
-	for (i = 0; i < length1; i++)
-		arr[i] = s1[i];
-	for (i = 0; i < length2; i++)
-		arr[i + length1] = s2[i];
+	for (x = 0; x <= (len1 + len2); x++)
+	{
+		if (x < len1)
+			ptr[x] = s1[x];
+		else
+			ptr[x] = s2[x - len1];
+	}
 
-	return (arr);
+	return (ptr);
 }
