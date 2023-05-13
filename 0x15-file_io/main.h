@@ -1,5 +1,5 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stddef.h>
 #include <unistd.h>
@@ -12,4 +12,4 @@ void copy_textfile(char *filename, char *filecopy, int letters);
 int create_copyfile(const char *filename, char *text_content);
 int append_text_to_copyfile(const char *filename, char *text_content);
 
-#endif /*HOLBERTON_H*/
+#endif /*MAIN_H*/
